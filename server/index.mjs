@@ -14,9 +14,7 @@ import categoryRouter from './routes/categories.mjs'
 
 
 const corsOptions = {
-  origin: [
-    'http://localhost:5173',
-  ],
+  origin: ['http://localhost:5173', 'https://raltb.vercel.app', 'https://raltb-solitdio079s-projects.vercel.app'],
 
   credentials: true,
   optionsSuccessStatus: 200,
