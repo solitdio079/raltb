@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tiptap ul p,
+.tiptap ol p {
+  @apply inline;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  @apply pointer-events-none float-left h-0 text-sm;
+}
+/* Heading styles */
+.tiptap h1,
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+  @apply leading-4 mt-10 text-pretty;
+}
+
+.tiptap h1,
+.tiptap h2 {
+  @apply mt-14 mb-6;
+}
+
+.tiptap h1 {
+  @apply text-3xl;
+}
+
+.tiptap h2 {
+  @apply text-2xl;
+}
+
+.tiptap h3 {
+  @apply text-xl;
+}
+
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+  @apply text-lg;
+}
+/* Blockquote event styling */
+.tiptap blockquote {
+  @apply border-l-4 border-gray-500 my-6 pl-4;
+}
+.tiptap {
+  @apply text-black;
+}
+.tiptap ul,
+.tiptap ol {
+  @apply px-4 mt-5 mr-4 mb-5 ml-2;
+}
+.tiptap ul li p,
+.tiptap ol li p {
+  @apply my-4;
+}
+
+.tiptap pre {
+  @apply bg-black rounded-lg text-white font-mono my-6 px-4 py-3;
+}
+
+.tiptap pre code {
+  @apply bg-none text-inherit text-[0.8rem] p-0;
+}
+
+/* Code styling */
+.tiptap pre .hljs-comment,
+.tiptap pre .hljs-quote {
+  @apply text-[#616161];
+}
+
+.tiptap pre .hljs-variable,
+.tiptap pre .hljs-template-variable,
+.tiptap pre .hljs-attribute,
+.tiptap pre .hljs-tag,
+.tiptap pre .hljs-regexp,
+.tiptap pre .hljs-link,
+.tiptap pre .hljs-name,
+.tiptap pre .hljs-selector-id,
+.tiptap pre .hljs-selector-class {
+  @apply text-[#f98181];
+}
+
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  @apply text-[#fbbc88];
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  @apply text-[#b9f18d];
+}
+
+.hljs-title,
+.hljs-section {
+  @apply text-[#faf594];
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  @apply text-[#70cff8];
+}
+
+.hljs-emphasis {
+  @apply italic;
+}
+
+.hljs-strong {
+  @apply font-bold;
+}
+
+/* Image Styling */
+.titap img {
+  @apply block h-auto my-6 max-w-full;
+}
+.titap img &.ProseMirror-selectednode {
+  @apply outline outline-4 outline-purple-400;
+}
+
+/* Youtube embed */
+.tiptap div[data-youtube-video] {
+  @apply cursor-move pr-6;
+}
+.tiptap div[data-youtube-video] iframe {
+  @apply border-black border-4 block min-h-52 min-w-52 outline-0 outline-transparent;
+}
+
+.tiptap div[data-youtube-video] &.ProseMirror-selectednode iframe {
+  @apply outline-purple-400 outline-4 outline transition-[outline] duration-150;
+}
