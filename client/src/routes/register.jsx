@@ -52,7 +52,7 @@ export default function Register() {
               application! Avez-vous un compte?
             </p>
             <Link to={'/login'} className="btn btn-info">
-              Conntez-vous
+              Connectez-vous
             </Link>
           </div>
           {fetcher.data ? (
