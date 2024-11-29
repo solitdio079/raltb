@@ -16,7 +16,11 @@ import { Server } from 'socket.io'
 
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://raltb.vercel.app', 'https://raltb-solitdio079s-projects.vercel.app'],
+  origin: [
+    'http://localhost:5173',
+    'https://malibusinessmachinetech.com',
+    'https://www.malibusinessmachinetech.com',
+  ],
 
   credentials: true,
   optionsSuccessStatus: 200,
@@ -48,11 +52,7 @@ app.use(
   session({
     secret: 'keyboard cat',
     resave: false,
-    cookie: {
-      sameSite: 'lax', //add
-      secure: true, //add
-      maxAge: 1000 * 60 * 60 * 24 * 14,
-    },
+   
     saveUninitialized: false,
     store: MongoStore.create({
       client: mongoose.connection.getClient(),

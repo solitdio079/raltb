@@ -25,7 +25,7 @@ router.post(
 router.get(
   '/login/email/verify',
   passport.authenticate('magiclink', {
-    successReturnToOrRedirect: 'https://raltb.vercel.app/home',
+    successReturnToOrRedirect: 'https://api.malibusinessmachinetech.com/admin',
     failureMessage: 'Token Invalide!',
   })
 )

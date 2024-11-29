@@ -18,7 +18,8 @@ passport.use(
     },
     function send(user, token) {
       var link =
-        'https://raltb.onrender.com/auth/login/email/verify?token=' + token
+        'https://api.malibusinessmachinetech.com/auth/login/email/verify?token=' +
+        token
       var msg = {
         to: user.email,
         from: process.env.EMAIL,
