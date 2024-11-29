@@ -29,20 +29,20 @@ try {
   console.log(error.message)
 }
 const app = express()
-// const server = createServer(app)
-// const io = new Server(server, { cors: { origin: '*' } })
+const server = createServer(app)
+const io = new Server(server, { cors: { origin: '*' } })
 app.use(cors(corsOptions))
-// app.use((req, res, next) => {
-//   req.io = io
-//   next()
-// })
-// const connections = []
-// io.on("connection", (socket) => {
-//   connections.push(socket)
-//   socket.on("disconnect", () => {
-//      connections.splice(connections.indexOf(socket), 1)
-//   })
-// })
+app.use((req, res, next) => {
+  req.io = io
+  next()
+})
+const connections = []
+io.on("connection", (socket) => {
+  connections.push(socket)
+  socket.on("disconnect", () => {
+     connections.splice(connections.indexOf(socket), 1)
+  })
+})
 app.use(cookieParser('yes'))
 app.use(
   session({
