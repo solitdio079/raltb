@@ -49,7 +49,7 @@ app.use(
     secret: 'keyboard cat',
     resave: false,
     cookie: {
-      sameSite: 'none', //add
+      sameSite: 'lax', //add
       secure: true, //add
       maxAge: 1000 * 60 * 60 * 24 * 14,
     },
