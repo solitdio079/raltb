@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
     try {
         const newTweet = new Tweets({ content, author })
         await newTweet.save()
+        req.io.emit("tweet message", newTweet)
         return res.send({msg: 'Tweet cree!'})
     } catch (error) {
         return res.send({error: error.message})

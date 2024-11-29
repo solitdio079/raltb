@@ -10,6 +10,8 @@ import authRouter from './routes/auth.mjs'
 import postRouter from './routes/posts.mjs'
 import userRouter from './routes/users.mjs'
 import categoryRouter from './routes/categories.mjs' 
+import { createServer } from 'node:http'
+import { Server } from 'socket.io'
 //import path from 'node:path'
 
 
@@ -27,8 +29,20 @@ try {
   console.log(error.message)
 }
 const app = express()
+const server = createServer(app)
+const io = new Server(server, { cors: { origin: '*' } })
 app.use(cors(corsOptions))
-
+app.use((req, res, next) => {
+  req.io = io
+  return next()
+})
+const connections = []
+io.on("connection", (socket) => {
+  connections.push(socket)
+  socket.on("disconnect", () => {
+     connections.splice(connections.indexOf(socket), 1)
+  })
+})
 app.use(cookieParser('yes'))
 app.use(
   session({
@@ -58,6 +72,6 @@ app.get('/', (req, res) => {
   res.send('Hello, homepage here!')
 })
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log('Listening to port 5500!')
 })
