@@ -53,7 +53,7 @@ export default function UserAvatar({loaderRoute}) {
           }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          navigation
+         
           mousewheel={{
             forceToAxis: true,
             sensitivity: 1,
