@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import {FaBars} from 'react-icons/fa6'
-import { Link, NavLink } from 'react-router-dom'
+import {NavLink, Form} from 'react-router-dom'
 export default function Navbar({user}) {
     return (
       <div className="navbar bg-base-100 ">
@@ -53,7 +53,7 @@ export default function Navbar({user}) {
                 Accueil
               </NavLink>
             </li>
-            
+
             <li>
               <a>Tweets</a>
             </li>
@@ -67,9 +67,11 @@ export default function Navbar({user}) {
 
         <div className="navbar-end">
           {user ? (
-            <Link className="btn bg-red-600 text-white border-white">
-              Logout
-            </Link>
+            <Form method="post" action={'/auth/logout'}>
+              <button className="btn bg-red-600 text-white border-white">
+                Logout
+              </button>
+            </Form>
           ) : (
             ''
           )}

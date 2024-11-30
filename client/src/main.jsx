@@ -28,7 +28,8 @@ import GetAllPosts from './routes/admin/posts/getAllPosts'
 import EditPost, {action as editPostAction, loader as editPostLoader} from './routes/admin/posts/editPost'
 import { action as uploadPostImagesAction } from './routes/admin/posts/uploadImages'
 import CreatePost, {action as createPostAction} from './routes/admin/posts/createPost'
-import SinglePost, {loader as singlePostLoader} from './routes/singlePost'
+import SinglePost, { loader as singlePostLoader } from './routes/singlePost'
+import {action as logoutAction} from './routes/logout'
 import Home from './routes/home'
 //import App from './App.jsx'
 const router = createBrowserRouter([
@@ -165,6 +166,11 @@ const router = createBrowserRouter([
     path: '/login',
     element: <Login />,
     action: loginAction,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/logout',
+    action: logoutAction,
     errorElement: <ErrorPage />,
   },
 ])
