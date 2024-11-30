@@ -25,7 +25,7 @@ router.post(
 router.get(
   '/login/email/verify',
   passport.authenticate('magiclink', {
-    successReturnToOrRedirect: 'https://malibusinessmachinetech.com/admin',
+    successReturnToOrRedirect: 'https://raltb.com/admin',
     failureMessage: 'Token Invalide!',
   })
 )

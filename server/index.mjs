@@ -18,8 +18,8 @@ import { Server } from 'socket.io'
 const corsOptions = {
   origin: [
     'http://localhost:5173',
-    'https://malibusinessmachinetech.com',
-    'https://www.malibusinessmachinetech.com',
+    'https://raltb.com',
+    'https://www.raltb.com',
   ],
 
   credentials: true,
