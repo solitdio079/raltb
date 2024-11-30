@@ -55,7 +55,7 @@ export const MenuBar = ({ editor }) => {
           value={height}
           onChange={(event) => setHeight(event.target.value)}
         />
-        <button
+       <button type="button"
           className="btn join-item btn-sm"
           id="add"
           onClick={addYoutubeVideo}
@@ -64,7 +64,7 @@ export const MenuBar = ({ editor }) => {
         </button>
       </div>
       <div className="button-group join flex flex-wrap">
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
           disabled={!editor.can().chain().focus().toggleBold().run()}
           className={
@@ -76,11 +76,11 @@ export const MenuBar = ({ editor }) => {
           B
         </button>
 
-        <button className="btn m-2 join-item btn-sm" onClick={addImage}>
+       <button type="button" className="btn m-2 join-item btn-sm" onClick={addImage}>
           Set image
         </button>
 
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           disabled={!editor.can().chain().focus().toggleItalic().run()}
           className={
@@ -91,7 +91,7 @@ export const MenuBar = ({ editor }) => {
         >
           I
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
           disabled={!editor.can().chain().focus().toggleStrike().run()}
           className={
@@ -102,7 +102,7 @@ export const MenuBar = ({ editor }) => {
         >
           Strike
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           disabled={!editor.can().chain().focus().toggleCodeBlock().run()}
           className={
@@ -113,19 +113,19 @@ export const MenuBar = ({ editor }) => {
         >
           Code
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().unsetAllMarks().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Clear marks
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().clearNodes().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Clear nodes
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().setParagraph().run()}
           className={
             editor.isActive('paragraph')
@@ -135,7 +135,7 @@ export const MenuBar = ({ editor }) => {
         >
           Paragraph
         </button>
-        <button
+       <button type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 1 }).run()
           }
@@ -147,7 +147,7 @@ export const MenuBar = ({ editor }) => {
         >
           H1
         </button>
-        <button
+       <button type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
           }
@@ -159,7 +159,7 @@ export const MenuBar = ({ editor }) => {
         >
           H2
         </button>
-        <button
+       <button type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 3 }).run()
           }
@@ -171,7 +171,7 @@ export const MenuBar = ({ editor }) => {
         >
           H3
         </button>
-        <button
+       <button type="button"
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 4 }).run()
           }
@@ -184,7 +184,7 @@ export const MenuBar = ({ editor }) => {
           H4
         </button>
 
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={
             editor.isActive('bulletList')
@@ -194,7 +194,7 @@ export const MenuBar = ({ editor }) => {
         >
           Bullet list
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={
             editor.isActive('orderedList')
@@ -204,7 +204,7 @@ export const MenuBar = ({ editor }) => {
         >
           Ordered list
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={
             editor.isActive('codeBlock')
@@ -214,7 +214,7 @@ export const MenuBar = ({ editor }) => {
         >
           Code block
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={
             editor.isActive('blockquote')
@@ -224,33 +224,33 @@ export const MenuBar = ({ editor }) => {
         >
           Blockquote
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().setHorizontalRule().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Horizontal rule
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().setHardBreak().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Hard break
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().chain().focus().undo().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Undo
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().chain().focus().redo().run()}
           className=" btn btn-sm m-2 join-item"
         >
           Redo
         </button>
-        <button
+       <button type="button"
           onClick={() => editor.chain().focus().setColor('#EEF8F7').run()}
           className={
             editor.isActive('textStyle', { color: '#958DF1' })

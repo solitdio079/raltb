@@ -168,7 +168,7 @@ router.patch("/role/:id", checkIfAdmin,async (req, res) => {
     oldUser.role = role
     try {
         await Users.findByIdAndUpdate(id, oldUser)
-        const link = `http://localhost:5173/login`
+        const link = `http://malibusinessmachinetech.com/login`
         const msg = {
             to: oldUser.email,
             from: process.env.EMAIL,
