@@ -67,7 +67,7 @@ export default function Navbar({user}) {
 
         <div className="navbar-end">
           {user ? (
-            <Form method="post" action={'/auth/logout'}>
+            <Form method="post" action={'/logout'}>
               <button className="btn bg-red-600 text-white border-white">
                 Logout
               </button>
