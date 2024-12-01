@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useFetcher } from "react-router-dom"
+import { Link, useFetcher, useNavigate } from "react-router-dom"
 import { url } from "../utils/serverUrl"
 import toast, {Toaster} from 'react-hot-toast'
 export async function action({request}) {
@@ -21,7 +21,7 @@ export default function Register() {
     const fetcher = useFetcher()
     const departmentFields = ['Etudiant', 'Employee']
     const [departmentSwitch, setDepartmentSwitch] = useState(true)
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
      const toastOptions = {
        duration: 5000,
        id: Math.round(Math.random() * 1e9),
@@ -57,7 +57,7 @@ export default function Register() {
           </div>
           {fetcher.data ? (
             fetcher.data.msg ? (
-              toast.success(fetcher.data.msg, toastOptions)
+              navigate('/login')
             ) : (
               <Link className="btn btn-primary" to="/">
                 {toast.error(fetcher.data.error, toastOptions)} Reesayer
