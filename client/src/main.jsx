@@ -100,6 +100,10 @@ const router = createBrowserRouter([
         loader: userEditLoader,
       },
       {
+            path: "/admin/users/delete/:id",
+            action: userDeleteAction
+          },
+      {
         path: '/admin/users/view',
         element: <ViewUsersRoot />,
         errorElement: <ErrorPage />,
@@ -115,10 +119,7 @@ const router = createBrowserRouter([
             loader: userSearchLoader,
             errorElement: <ErrorPage />,
           },
-          {
-            path: "/admin/users/delete/:id",
-            action: userDeleteAction
-          }
+          
         ],
       },
       {
