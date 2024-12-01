@@ -77,7 +77,7 @@ export default function UserAvatar({loaderRoute}) {
                     </div>
                   </div>
                   <p className='m-2 '> {item.fullName} </p>
-                  <p className="badge text-white mx-4 badge-primary"> {item.role} </p>
+                  <p className="bg-primary rounded-md p-2"> {item.role} </p>
                 </SwiperSlide>
               ))
             : ''}
