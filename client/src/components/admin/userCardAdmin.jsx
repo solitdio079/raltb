@@ -23,7 +23,7 @@ export default function UserCardAdmin({ item }) {
       <>
         <div className="card bg-primary w-96 shadow-xl m-2">
           <figure>
-            <img src={url +"/"+ item.picture} alt="Shoes" />
+            <img src={url + '/' + item.picture} alt="Shoes" />
           </figure>
           <div className="card-body text-white rounded-md">
             <h2 className="card-title">
@@ -33,7 +33,11 @@ export default function UserCardAdmin({ item }) {
             <p> {item.country} </p>
             <p> {item.job} </p>
             <div className="card-actions justify-end">
-              <fetcher.Form action={"/admin/actions/changeRole"} className="card-body bg-black rounded-md" method="post">
+              <fetcher.Form
+                action={'/admin/actions/changeRole'}
+                className="card-body bg-black rounded-md"
+                method="post"
+              >
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Role</span>
@@ -41,12 +45,12 @@ export default function UserCardAdmin({ item }) {
                   <input
                     type="text"
                     placeholder="President"
-                                    className="input input-bordered text-black"
-                                    defaultValue={item.role}
+                    className="input input-bordered text-black"
+                    defaultValue={item.role}
                     name="role"
                     required
-                                />
-                                <input type="hidden" name="id" value={item._id} />
+                  />
+                  <input type="hidden" name="id" value={item._id} />
                 </div>
 
                 <Toaster />
@@ -59,6 +63,9 @@ export default function UserCardAdmin({ item }) {
                     )}
                   </button>
                 </div>
+              </fetcher.Form>
+              <fetcher.Form method='post' action={`/admin/users/delete/${item.id}`}>
+                <button className="btn btn-error">Supprimer</button>
               </fetcher.Form>
             </div>
           </div>

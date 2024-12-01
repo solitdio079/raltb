@@ -29,7 +29,8 @@ import EditPost, {action as editPostAction, loader as editPostLoader} from './ro
 import { action as uploadPostImagesAction } from './routes/admin/posts/uploadImages'
 import CreatePost, {action as createPostAction} from './routes/admin/posts/createPost'
 import SinglePost, { loader as singlePostLoader } from './routes/singlePost'
-import {action as logoutAction} from './routes/logout'
+import { action as logoutAction } from './routes/logout'
+import {action as userDeleteAction} from './routes/admin/users/deleteUser'
 import Home from './routes/home'
 //import App from './App.jsx'
 const router = createBrowserRouter([
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
             loader: userSearchLoader,
             errorElement: <ErrorPage />,
           },
+          {
+            path: "/admin/users/delete/:id",
+            action: userDeleteAction
+          }
         ],
       },
       {
