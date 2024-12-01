@@ -44,9 +44,14 @@ passport.use(
             return reject("Pas d'utilisateur")
           })
         }
-        return new Promise(function (resolve, reject) {
-          return resolve(check)
-        })
+        if (check.role === 'Guest' || check.role === 'guest') {
+            return new Promise(function (resolve, reject) {
+              return reject("Pas d'utilisateur")
+            })
+        }
+          return new Promise(function (resolve, reject) {
+            return resolve(check)
+          })
       } catch (error) {
         return new Promise(function (resolve, reject) {
           return reject(error.message)
