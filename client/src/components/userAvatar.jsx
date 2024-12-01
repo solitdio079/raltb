@@ -13,8 +13,7 @@ import {
   Pagination,
   Autoplay,
   Navigation,
-  Scrollbar,
-  Mousewheel,
+ 
 } from 'swiper/modules'
 import { url } from '../utils/serverUrl'
 export default function UserAvatar({loaderRoute}) {
@@ -26,7 +25,7 @@ export default function UserAvatar({loaderRoute}) {
     return (
       <div className="p-10">
         <Swiper
-          modules={[Pagination, Autoplay, Scrollbar, Mousewheel, Navigation]}
+          modules={[Pagination, Autoplay, Navigation]}
           loop={true}
           breakpoints={{
             0: {
@@ -52,18 +51,12 @@ export default function UserAvatar({loaderRoute}) {
             },
           }}
           pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-         
-          mousewheel={{
-            forceToAxis: true,
-            sensitivity: 1,
-            releaseOnEdges: true,
-          }}
+          
           autoplay={{
             delay: 5000,
             disableOnInteraction: false,
           }}
-          className="m-5"
+          className="w-full"
         >
           {fetcher.data
             ? fetcher.data.map((item) => (
