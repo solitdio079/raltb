@@ -69,7 +69,7 @@ export default function UserAvatar({loaderRoute}) {
             ? fetcher.data.map((item) => (
                 <SwiperSlide
                   key={item._id}
-                  className="flex flex-col justify-center items-center"
+                  className="flex flex-col justify-center items-center mx-3"
                 >
                   <div className="avatar mx-auto">
                     <div className="w-32 rounded-full">
@@ -77,7 +77,7 @@ export default function UserAvatar({loaderRoute}) {
                     </div>
                   </div>
                   <p className='m-2 '> {item.fullName} </p>
-                  <p className="bg-primary rounded-md p-2"> {item.role} </p>
+                  <p className="bg-primary rounded-md text-white p-2"> {item.role} </p>
                 </SwiperSlide>
               ))
             : ''}
